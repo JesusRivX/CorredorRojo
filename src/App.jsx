@@ -7,11 +7,12 @@ import Blog from "./pages/blog";
 import Contacto from "./pages/contacto";
 import InicioSesion from "./pages/inicioSesion";
 import Registro from "./pages/register";
+
 import Usuario from "./pages/usuario";
 import Tarjeta from "./pages/Usuario/tarjeta";
 import Codigo from "./pages/Usuario/codigo";
 import Agente from "./pages/Usuario/agente";
-
+import Map from "./pages/Usuario/map";
 import Ecommerce from "./components/Ecommerce/Ecommerce";
 
 import Dashboard from "./pages/dashboard";
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="tarjeta" element={<Tarjeta />} />
           <Route path="agente" element={<Agente />} />
           <Route path="ecommerce" element={<Ecommerce />} />
+          <Route path="map" element={<Map />} />
         </Route>
       </Routes>
     </Router>

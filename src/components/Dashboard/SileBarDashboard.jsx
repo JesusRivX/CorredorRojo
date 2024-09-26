@@ -79,7 +79,7 @@ const SileBarDashboard = ({ isSidebarOpen, toggleSidebar }) => {
             <button
               onClick={() => {
                 toggleSidebar();
-                navigate("/dashboard/tarjeta");
+                navigate("/dashboard/map");
               }}
             >
               Ver Paraderos
