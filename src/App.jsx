@@ -14,6 +14,8 @@ import Codigo from "./pages/Usuario/codigo";
 import Agente from "./pages/Usuario/agente";
 import Map from "./pages/Usuario/map";
 import Ecommerce from "./components/Ecommerce/Ecommerce";
+import Listar from "./components/Listar";
+import EditarUser from "./components/EditUser";
 
 import Dashboard from "./pages/dashboard";
 
@@ -39,6 +41,8 @@ const App = () => {
           <Route path="agente" element={<Agente />} />
           <Route path="ecommerce" element={<Ecommerce />} />
           <Route path="map" element={<Map />} />
+          <Route path="listar" element={<Listar />} />
+          <Route path="edit/:userId" element={<EditarUser />} />
         </Route>
       </Routes>
     </Router>

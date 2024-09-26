@@ -61,8 +61,8 @@ const MapComponent = () => {
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={{ width: "100%", height: "100%" }}
-      center={{ lat: -12.046374, lng: -77.042793 }} // Centro en Lima, Perú
-      zoom={10}
+      center={{ lat: -12.076374, lng: -77.002793 }} // Centro en Lima, Perú
+      zoom={13.4}
     >
       {markers.map((marker, index) => (
         <Marker
