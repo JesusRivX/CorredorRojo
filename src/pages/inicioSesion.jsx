@@ -9,7 +9,6 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
   const [activeLink, setActiveLink] = useState("/inicio");
 
   const handleLinkClick = (path) => {
@@ -65,14 +64,15 @@ const Login = () => {
         // Redirigir al usuario basado en la URL proporcionada por el backend
         setTimeout(() => {
           localStorage.setItem("username", data.username);
-          navigate(data.redirectUrl); // Navegación a la URL recibida
+          localStorage.setItem("id", data.id); // Guardar el ID del usuario
+          navigate(data.redirectUrl);
         }, 1500);
       } else {
         const errorData = await response.json();
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: errorData.message, // Mostrar el mensaje de error desde el backend
+          text: errorData.message,
         });
       }
     } catch (error) {

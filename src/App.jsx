@@ -19,6 +19,9 @@ import EditarUser from "./components/EditUser";
 
 import Dashboard from "./pages/dashboard";
 
+import ModalComponent from "./components/Dashboard/LoginCard";
+import UserProfile from "./pages/Usuario/UserProfile";
+
 const App = () => {
   return (
     <Router>
@@ -33,6 +36,7 @@ const App = () => {
         <Route path="/usuario" element={<Usuario />} />
 
         <Route path="/codigo" element={<Codigo />} />
+        <Route path="/modal" element={<ModalComponent />} />
 
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Usuario />} />
@@ -43,6 +47,7 @@ const App = () => {
           <Route path="map" element={<Map />} />
           <Route path="listar" element={<Listar />} />
           <Route path="edit/:userId" element={<EditarUser />} />
+          <Route path="profile" element={<UserProfile />} />
         </Route>
       </Routes>
     </Router>
