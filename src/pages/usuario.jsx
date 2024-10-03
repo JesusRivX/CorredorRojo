@@ -5,17 +5,22 @@ import Swal from "sweetalert2";
 const Usuario = () => {
   const [username, setUsername] = useState("");
   const [id, setId] = useState("");
+  const [rol, setRol] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
     // Obtener el nombre de usuario del localStorage
     const savedUsername = localStorage.getItem("username");
+    const savedRol = localStorage.getItem("rol");
     const savedId = localStorage.getItem("id");
     if (savedUsername) {
       setUsername(savedUsername);
     }
     if (savedId) {
       setId(savedId);
+    }
+    if (savedRol) {
+      setRol(savedRol);
     }
   }, []);
 
@@ -122,7 +127,9 @@ const Usuario = () => {
           <h1 className="text-3xl font-bold mb-4">
             Saldo: S/{saldo.toFixed(2)}
           </h1>
-          <h1>Bienvenido {username}</h1>
+          <h1>
+            Bienvenido {rol} {username}
+          </h1>
           <h1>ID {id}</h1>
           {selectedSection === "recargarTarjeta" && (
             <div>

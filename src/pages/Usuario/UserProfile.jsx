@@ -6,6 +6,9 @@ const UserProfile = () => {
     username: "",
     email: "",
     password: "",
+    dni: "",
+    address: "",
+    phone: "",
   });
 
   const [isEditing, setIsEditing] = useState(false); // Estado para habilitar/deshabilitar edición
@@ -21,7 +24,10 @@ const UserProfile = () => {
         setUser({
           username: data.username,
           email: data.email,
-          password: data.password, // La contraseña la dejamos vacía
+          password: data.password,
+          dni: data.dni,
+          address: data.address,
+          phone: data.phone,
         });
       } else {
         Swal.fire({
@@ -93,7 +99,7 @@ const UserProfile = () => {
       <h1 className="text-4xl font-bold mb-14 ">Configuración</h1>
 
       {/* Botón para habilitar edición */}
-      <div className="flex justify-between w-full mb-4">
+      <div className="flex flex-wrap sm:justify-between w-full mb-4">
         <h2 className="text-2xl font-semibold mb-4">Ajustes del perfil</h2>
         <button
           onClick={() => setIsEditing(!isEditing)}
@@ -142,9 +148,45 @@ const UserProfile = () => {
             disabled={!isEditing} // Bloqueado si no estamos en modo edición
             className="mt-1 block w-full px-3 py-2 dark:bg-gray-700 dark:text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
           />
-          <p className="text-xs text-gray-500 mt-3">
-            Coloca un correo electrónico autenticado
-          </p>
+        </div>
+
+        {/* DNI */}
+        <div>
+          <label className="block text-lg font-medium">DNI</label>
+          <input
+            type="text"
+            name="dni"
+            value={user.dni}
+            onChange={handleChange}
+            disabled={!isEditing} // Bloqueado si no estamos en modo edición
+            className="mt-1 block w-full px-3 py-2 dark:bg-gray-700 dark:text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+        </div>
+
+        {/* Direccion */}
+        <div>
+          <label className="block text-lg font-medium">Dirección</label>
+          <input
+            type="text"
+            name="address"
+            value={user.address}
+            onChange={handleChange}
+            disabled={!isEditing} // Bloqueado si no estamos en modo edición
+            className="mt-1 block w-full px-3 py-2 dark:bg-gray-700 dark:text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
+        </div>
+
+        {/* Telefono */}
+        <div>
+          <label className="block text-lg font-medium">Teléfono</label>
+          <input
+            type="text"
+            name="phone"
+            value={user.phone}
+            onChange={handleChange}
+            disabled={!isEditing} // Bloqueado si no estamos en modo edición
+            className="mt-1 block w-full px-3 py-2 dark:bg-gray-700 dark:text-white rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
+          />
         </div>
 
         {/* Contraseña */}

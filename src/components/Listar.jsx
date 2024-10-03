@@ -28,7 +28,7 @@ const UserList = () => {
       });
   };
 
-  // Función para manejar la edición del usuario (redirigir a un formulario de edición)
+  // Función para manejar la edición del usuario (redirigir a un formulario de edición
   const editUser = (userId) => {
     window.location.href = `/dashboard/edit/${userId}`; // Redirigir a la página de edición
   };
@@ -43,6 +43,10 @@ const UserList = () => {
             <th>Nombre de Usuario</th>
             <th>Email</th>
             <th>Contraseña</th>
+            <th>DNI</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Rol</th>
             <th>Acciones</th>
           </tr>
         </thead>
@@ -54,6 +58,10 @@ const UserList = () => {
                 <td>{user.username}</td>
                 <td>{user.email}</td>
                 <td>{user.password}</td>
+                <td>{user.dni}</td>
+                <td>{user.phone}</td>
+                <td>{user.address}</td>
+                <td>{user.role}</td>
                 <td>
                   <button onClick={() => editUser(user.id)}>Editar</button>
                   <button onClick={() => deleteUser(user.id)}>Eliminar</button>

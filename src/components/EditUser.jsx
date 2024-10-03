@@ -8,6 +8,9 @@ const EditUser = () => {
     username: "",
     email: "",
     password: "",
+    dni: "",
+    address: "",
+    phone: "",
   });
   const navigate = useNavigate();
 
@@ -68,6 +71,30 @@ const EditUser = () => {
           type="password"
           name="password"
           value={user.password}
+          onChange={handleChange}
+        />
+        <br />
+        <label>DNI:</label>
+        <input
+          type="text"
+          name="dni"
+          value={user.dni}
+          onChange={handleChange}
+        />
+        <br />
+        <label>Dirección:</label>
+        <input
+          type="text"
+          name="address"
+          value={user.address}
+          onChange={handleChange}
+        />
+        <br />
+        <label>Teléfono:</label>
+        <input
+          type="text"
+          name="phone"
+          value={user.phone}
           onChange={handleChange}
         />
         <br />
