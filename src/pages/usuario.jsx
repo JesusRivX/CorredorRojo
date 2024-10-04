@@ -121,78 +121,14 @@ const Usuario = () => {
   };
 
   return (
-    <div className="mx-auto p-8 shadow-lg mt-16 sm:ml-64 dark:bg-gray-800 dark:text-white h-screen">
+    <div className="mx-auto p-8 shadow-lg mt-16 sm:ml-64 bg-gray-100 dark:bg-gray-800 dark:text-white h-screen">
       <div>
         <div>
           <h1 className="text-3xl font-bold mb-4">
             Saldo: S/{saldo.toFixed(2)}
           </h1>
-          <h1>
-            Bienvenido {rol} {username}
-          </h1>
+          <h1 className="text-3xl font-bold mb-4">Bienvenido! {username}</h1>
           <h1>ID {id}</h1>
-          {selectedSection === "recargarTarjeta" && (
-            <div>
-              <h2 className="text-2xl font-bold mb-4">Recargar Tarjeta</h2>
-
-              <div className="mb-4">
-                <label className="block mb-2">Monto a recargar:</label>
-                <input
-                  type="number"
-                  className="w-full p-2 border border-gray-300 rounded"
-                  value={monto}
-                  onChange={(e) => setMonto(e.target.value)}
-                  placeholder="Ingrese el monto"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label className="block mb-2">Número de tarjeta:</label>
-                <input
-                  type="number"
-                  className="w-full p-2 border border-gray-300 rounded"
-                  value={numeroTarjeta}
-                  onChange={(e) => setNumeroTarjeta(e.target.value)}
-                  placeholder="Ingrese el número de tarjeta"
-                />
-              </div>
-
-              <div className="mb-4">
-                <label className="block mb-2">Método de pago:</label>
-                <select
-                  className="w-full p-2 border border-gray-300 rounded"
-                  value={metodoPago}
-                  onChange={(e) => setMetodoPago(e.target.value)}
-                >
-                  <option value="">Seleccionar</option>
-                  <option value="tarjeta">Tarjeta de crédito/débito</option>
-                  <option value="codigo">Monedero digital (QR)</option>
-                  <option value="agentes">Agentes bancarios</option>
-                </select>
-              </div>
-
-              <button
-                className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700"
-                onClick={handleProcesarCompra}
-              >
-                Procesar Recarga
-              </button>
-
-              <button
-                className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 mt-4"
-                onClick={handlePagar}
-              >
-                Pagar S/3.75
-              </button>
-
-              <button
-                className="w-full bg-red-600 text-white p-2 rounded hover:bg-red-700 mt-4"
-                onClick={handleLogout}
-              >
-                Cerrar Sesión
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </div>
